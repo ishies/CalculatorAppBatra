@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/key_1"
+            android:id="@+id/key_7"
             android:layout_width="86dp"
             android:layout_height="86dp"
             android:layout_row="0"
@@ -29,10 +29,11 @@
             android:text="7"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
-            android:id="@+id/key_2"
+            android:id="@+id/key_8"
             android:layout_width="86dp"
             android:layout_height="86dp"
             android:layout_row="0"
@@ -42,10 +43,11 @@
             android:text="8"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
-            android:id="@+id/key_3"
+            android:id="@+id/key_9"
             android:layout_width="86dp"
             android:layout_height="86dp"
             android:layout_row="0"
@@ -55,6 +57,7 @@
             android:text="9"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
@@ -68,6 +71,7 @@
             android:text="4"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
@@ -81,6 +85,7 @@
             android:text="5"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
@@ -94,10 +99,11 @@
             android:text="6"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
-            android:id="@+id/key_7"
+            android:id="@+id/key_1"
             android:layout_width="86dp"
             android:layout_height="86dp"
             android:layout_row="2"
@@ -107,10 +113,11 @@
             android:text="1"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
-            android:id="@+id/key_8"
+            android:id="@+id/key_2"
             android:layout_width="86dp"
             android:layout_height="86dp"
             android:layout_row="2"
@@ -120,10 +127,11 @@
             android:text="2"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
-            android:id="@+id/key_9"
+            android:id="@+id/key_3"
             android:layout_width="86dp"
             android:layout_height="86dp"
             android:layout_row="2"
@@ -133,6 +141,7 @@
             android:text="3"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
@@ -146,6 +155,7 @@
             android:text="0"
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="addToCalc"
             app:cornerRadius="0dp" />
 
         <Button
@@ -159,6 +169,7 @@
             android:text="="
             android:textColor="@color/background"
             android:textSize="@dimen/heading2"
+            android:onClick="evaluate"
             app:cornerRadius="0dp" />
     </GridLayout>
 
@@ -177,6 +188,7 @@
 
         <Button
             android:id="@+id/key_plus"
+            android:onClick="addToCalc"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_row="0"
@@ -193,6 +205,7 @@
 
         <Button
             android:id="@+id/key_minus"
+            android:onClick="addToCalc"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_row="0"
@@ -209,6 +222,7 @@
 
         <Button
             android:id="@+id/key_times"
+            android:onClick="addToCalc"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_row="0"
@@ -224,6 +238,7 @@
 
         <Button
             android:id="@+id/key_over"
+            android:onClick="addToCalc"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_row="0"
