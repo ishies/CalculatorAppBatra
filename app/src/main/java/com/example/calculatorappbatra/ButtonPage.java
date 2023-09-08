@@ -152,7 +152,7 @@ public class ButtonPage extends AppCompatActivity {
         Button b = (Button) this.findViewById(R.id.answer);
         String answer = "";
         try {
-                answer = "" + eval(evaluate) + "";
+                answer = "" + eval(evaluate);
                 if (answer.contains("Infinity")) {
                     answer = "CANNOT COMPUTE";
                 }

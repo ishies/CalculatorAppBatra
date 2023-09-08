@@ -2,13 +2,25 @@ package com.example.calculatorappbatra;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.Objects;
 
 public class TypedPage extends AppCompatActivity {
 
@@ -102,9 +114,69 @@ public class TypedPage extends AppCompatActivity {
 
     String operator;
 
+    // Function adapted from Geeks for Geeks:
+    // https://www.geeksforgeeks.org/how-to-programmatically-hide-android-soft-keyboard/
+    public void closeKeyboard(View v)
+    {
+        // this will give us the view
+        // which is currently focus
+        // in this layout
+        View view = this.getCurrentFocus();
+
+        // if nothing is currently
+        // focus then this will protect
+        // the app from crash
+        if (view != null) {
+
+            // now assign the system
+            // service to InputMethodManager
+            InputMethodManager manager
+                    = (InputMethodManager)
+                    getSystemService(
+                            Context.INPUT_METHOD_SERVICE);
+            manager
+                    .hideSoftInputFromWindow(
+                            view.getWindowToken(), 0);
+        }
+    }
+
+    //@SuppressLint("ResourceAsColor")
+    /*public void resetButtonStyles() {
+        ViewCompat.setBackgroundTintList(
+                findViewById(R.id.key_plus),
+                ColorStateList.valueOf(R.color.TextAndButtons));
+        Button b = (Button) this.findViewById(R.id.key_plus);
+        b.setTextColor(R.color.selectedButon);
+
+        ViewCompat.setBackgroundTintList(
+                findViewById(R.id.key_minus),
+                ColorStateList.valueOf(R.color.TextAndButtons));
+        b = (Button) this.findViewById(R.id.key_minus);
+        b.setTextColor(R.color.selectedButon);
+
+        ViewCompat.setBackgroundTintList(
+                findViewById(R.id.key_times),
+                ColorStateList.valueOf(R.color.TextAndButtons));
+        b = (Button) this.findViewById(R.id.key_times);
+        b.setTextColor(R.color.selectedButon);
+
+        ViewCompat.setBackgroundTintList(
+                findViewById(R.id.key_over),
+                ColorStateList.valueOf(R.color.TextAndButtons));
+        b = (Button) this.findViewById(R.id.key_over);
+        b.setTextColor(R.color.selectedButon);
+
+    }*/
+
     @SuppressLint("ResourceAsColor")
     public void setOperator(View v) {
-        findViewById(R.id.key_plus).setBackground();
+        //resetButtonStyles();
+        /*ViewCompat.setBackgroundTintList(
+                v,
+                ColorStateList.valueOf(R.color.selectedButon));*/
+        Button b = (Button) v;
+        b.setTint(R.color.selectedButon);
+        b.setTextColor(R.color.selectedButon);
 
         TextView op = findViewById(v.getId());
         operator = op.getText().toString();
@@ -114,9 +186,32 @@ public class TypedPage extends AppCompatActivity {
         String n1 = num1.getText().toString();
 
         EditText num2 = findViewById(R.id.number2);
-        String n2 = num1.getText().toString();
+        String n2 = num2.getText().toString();
 
+        String evaluate = n1 + operator + n2;
+        Log.i("ishaan", evaluate);
+        String answer = "";
+        if (!operator.equals("")) {
+            try {
+                answer = "" + eval(evaluate);
+                if (answer.contains("Infinity")) {
+                    answer = "CANNOT COMPUTE";
+                }
+            } catch (Exception e) {
+                answer = "CANNOT COMPUTE";
+            }
+            evaluate = "";
+            num1.setText("");
+            num2.setText("");
+            operator = "";
+            // resetButtonStyles();
+        }
+        else {
+            answer = "please select an operator";
+        }
 
+        TextView ans = (TextView) this.findViewById(R.id.answer);
+        ans.setText(answer);
 
     }
     @Override
