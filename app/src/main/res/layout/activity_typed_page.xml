@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".TypedPage">
+
+    <EditText
+        android:id="@+id/number1"
+        android:layout_width="337dp"
+        android:layout_height="105dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_margin="@dimen/margin"
+        android:layout_marginTop="100dp"
+        android:background="@color/TextAndButtons"
+        android:ems="10"
+        android:hint="Number 1"
+        android:inputType="text"
+        android:padding="@dimen/padding"
+        android:textAlignment="center"
+        android:textColorHint="@color/background"
+        android:textSize="@dimen/heading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/number2"
+        android:layout_width="337dp"
+        android:layout_height="105dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_margin="@dimen/margin"
+        android:layout_marginTop="152dp"
+        android:background="@color/TextAndButtons"
+        android:ems="10"
+        android:hint="Number 2"
+        android:inputType="text"
+        android:padding="@dimen/padding"
+        android:textAlignment="center"
+        android:textColorHint="@color/background"
+        android:textSize="@dimen/heading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout2" />
+
+    <GridLayout
+        android:id="@+id/gridLayout2"
+        android:layout_width="361dp"
+        android:layout_height="92dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_marginTop="24dp"
+        android:columnCount="4"
+        android:rowCount="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number1">
+
+        <Button
+            android:id="@+id/key_plus"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_margin="@dimen/marginSmall"
+            android:backgroundTint="@color/TextAndButtons"
+            android:onClick="addToCalc"
+            android:text="+"
+            android:textAlignment="center"
+            android:textColor="@color/background"
+            android:textSize="@dimen/heading"
+            app:cornerRadius="0dp"
+            tools:layout_editor_absoluteX="226dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/key_minus"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_margin="@dimen/marginSmall"
+            android:backgroundTint="@color/TextAndButtons"
+            android:onClick="addToCalc"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="@color/background"
+            android:textSize="@dimen/heading"
+            app:cornerRadius="0dp"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/key_times"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_margin="@dimen/marginSmall"
+            android:backgroundTint="@color/TextAndButtons"
+            android:onClick="addToCalc"
+            android:text="*"
+            android:textAlignment="center"
+            android:textColor="@color/background"
+            android:textSize="@dimen/heading"
+            app:cornerRadius="0dp" />
+
+
+        <Button
+            android:id="@+id/key_over"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_margin="@dimen/marginSmall"
+            android:backgroundTint="@color/TextAndButtons"
+            android:onClick="addToCalc"
+            android:text="/"
+            android:textAlignment="center"
+            android:textColor="@color/background"
+            android:textSize="@dimen/heading"
+            app:cornerRadius="0dp"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_marginTop="36dp"
+        android:text="Calculate"
+        android:textSize="@dimen/heading2"
+        android:onClick="calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number2" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="249dp"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_marginTop="64dp"
+        android:background="@color/TextAndButtons"
+        android:text="Answer"
+        android:textAlignment="center"
+        android:textColor="@color/background"
+        android:textSize="@dimen/heading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

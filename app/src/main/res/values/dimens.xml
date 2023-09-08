@@ -5,4 +5,5 @@
     <dimen name="margin">30dp</dimen>
     <dimen name="padding">5dp</dimen>
     <dimen name="marginSmall">10dp</dimen>
+    <dimen name="marginTop">88dp</dimen>
 </resources>

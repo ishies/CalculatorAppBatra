@@ -6,4 +6,19 @@
     </style>
 
     <style name="Theme.CalculatorAppBatra" parent="Base.Theme.CalculatorAppBatra" />
+
+    <style name="button">
+        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="android:backgroundTint">@color/TextAndButtons</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="android:textColor">@color/background</item>
+        <item name="android:textSize">@dimen/heading</item>
+    </style>
+
+    <style name="buttonSmall" parent="button">
+        <item name="android:textSize">@dimen/heading2</item>
+        <item name="android:layout_margin">@dimen/marginSmall</item>
+        <item name="android:layout_width">86dp</item>
+        <item name="android:layout_height">86dp</item>
+    </style>
 </resources>
