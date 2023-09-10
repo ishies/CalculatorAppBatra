@@ -1,6 +1,7 @@
 package com.example.calculatorappbatra;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 public class ButtonPage extends AppCompatActivity {
+    public void returnHome (View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     // This function takes a string input, and parses it as a mathematical expression. It then returns the answer in double form.
     // Source: https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form

@@ -1,15 +1,12 @@
 package com.example.calculatorappbatra;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,11 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Objects;
-
 public class TypedPage extends AppCompatActivity {
+
+    public void returnHome (View v) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     // This function takes a string input, and parses it as a mathematical expression. It then returns the answer in double form.
     // Source: https://stackoverflow.com/questions/3422673/how-to-evaluate-a-math-expression-given-in-string-form
@@ -140,47 +138,47 @@ public class TypedPage extends AppCompatActivity {
         }
     }
 
-    //@SuppressLint("ResourceAsColor")
-    /*public void resetButtonStyles() {
+    @SuppressLint("ResourceAsColor")
+    public void resetButtonStyles() {
         ViewCompat.setBackgroundTintList(
                 findViewById(R.id.key_plus),
                 ColorStateList.valueOf(R.color.TextAndButtons));
         Button b = (Button) this.findViewById(R.id.key_plus);
-        b.setTextColor(R.color.selectedButon);
+        b.setTextColor(R.color.selectedButton);
 
         ViewCompat.setBackgroundTintList(
                 findViewById(R.id.key_minus),
                 ColorStateList.valueOf(R.color.TextAndButtons));
         b = (Button) this.findViewById(R.id.key_minus);
-        b.setTextColor(R.color.selectedButon);
+        b.setTextColor(R.color.selectedButton);
 
         ViewCompat.setBackgroundTintList(
                 findViewById(R.id.key_times),
                 ColorStateList.valueOf(R.color.TextAndButtons));
         b = (Button) this.findViewById(R.id.key_times);
-        b.setTextColor(R.color.selectedButon);
+        b.setTextColor(R.color.selectedButton);
 
         ViewCompat.setBackgroundTintList(
                 findViewById(R.id.key_over),
                 ColorStateList.valueOf(R.color.TextAndButtons));
         b = (Button) this.findViewById(R.id.key_over);
-        b.setTextColor(R.color.selectedButon);
+        b.setTextColor(R.color.selectedButton);
 
-    }*/
+    }
 
     @SuppressLint("ResourceAsColor")
     public void setOperator(View v) {
-        //resetButtonStyles();
-        /*ViewCompat.setBackgroundTintList(
+        resetButtonStyles();
+        ViewCompat.setBackgroundTintList(
                 v,
-                ColorStateList.valueOf(R.color.selectedButon));*/
+                ColorStateList.valueOf(R.color.selectedButton));
         Button b = (Button) v;
-        b.setTint(R.color.selectedButon);
-        b.setTextColor(R.color.selectedButon);
+        b.setTextColor(R.color.selectedButton);
 
         TextView op = findViewById(v.getId());
         operator = op.getText().toString();
     }
+
     public void calculate (View v) {
         EditText num1 = findViewById(R.id.number1);
         String n1 = num1.getText().toString();
@@ -203,7 +201,6 @@ public class TypedPage extends AppCompatActivity {
             evaluate = "";
             num1.setText("");
             num2.setText("");
-            operator = "";
             // resetButtonStyles();
         }
         else {
