@@ -191,7 +191,8 @@ public class TypedPage extends AppCompatActivity {
         String answer = "";
         if (!operator.equals("")) {
             try {
-                answer = "" + eval(evaluate);
+                double roundedNum = (double)(Math.round(eval(evaluate) * 1000)) / 1000;
+                answer = "" + roundedNum;
                 if (answer.contains("Infinity")) {
                     answer = "CANNOT COMPUTE";
                 }

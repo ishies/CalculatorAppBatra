@@ -157,8 +157,9 @@ public class ButtonPage extends AppCompatActivity {
         Button b = (Button) this.findViewById(R.id.answer);
         String answer = "";
         try {
-                answer = "" + eval(evaluate);
-                if (answer.contains("Infinity")) {
+            double roundedNum = (double) (Math.round(eval(evaluate) * 1000)) / 1000;
+            answer = "" + roundedNum;
+            if (answer.contains("Infinity")) {
                     answer = "CANNOT COMPUTE";
                 }
             }
