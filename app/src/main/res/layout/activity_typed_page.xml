@@ -46,10 +46,10 @@
         android:textSize="@dimen/heading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/operator_layout" />
 
     <GridLayout
-        android:id="@+id/gridLayout2"
+        android:id="@+id/operator_layout"
         android:layout_width="361dp"
         android:layout_height="92dp"
         android:layout_row="0"
@@ -124,7 +124,7 @@
         android:layout_column="1"
         android:layout_marginTop="28dp"
         android:onClick="calculate"
-        android:text="Calculate"
+        android:text="@string/c"
         android:textSize="@dimen/heading2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -139,7 +139,7 @@
         android:layout_column="1"
         android:layout_marginTop="64dp"
         android:background="@color/TextAndButtons"
-        android:text="Answer"
+        android:text="@string/a"
         android:textAlignment="center"
         android:textColor="@color/background"
         android:textSize="@dimen/heading"

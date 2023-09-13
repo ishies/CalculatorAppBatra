@@ -8,12 +8,12 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/instructions"
         android:layout_height="152dp"
         android:layout_width="wrap_content"
         android:layout_margin="@dimen/margin"
         android:layout_marginTop="28dp"
-        android:text="Select which type of calculator you would prefer:"
+        android:text="@string/instructions"
         android:textAlignment="center"
         android:textColor="@color/TextAndButtons"
         android:textSize="@dimen/heading"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/type_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="340dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/button_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/type_select"
         app:layout_constraintVertical_bias="0.09" />
     <!--android:onClick="typePage"-->
 </androidx.constraintlayout.widget.ConstraintLayout>

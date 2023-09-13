@@ -9,9 +9,9 @@
 
     <style name="button">
         <item name="android:layout_margin">@dimen/margin</item>
-        <item name="android:backgroundTint">@color/TextAndButtons</item>
+        <item name="android:backgroundTint">@color/md_theme_light_secondary</item>
         <item name="cornerRadius">0dp</item>
-        <item name="android:textColor">@color/background</item>
+        <item name="android:textColor">@color/TextAndButtons</item>
         <item name="android:textSize">@dimen/heading</item>
     </style>
 
@@ -21,6 +21,7 @@
         <item name="android:layout_width">86dp</item>
         <item name="android:layout_height">86dp</item>
     </style>
+
 
     <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>
