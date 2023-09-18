@@ -193,7 +193,7 @@ public class TypedPage extends AppCompatActivity {
             try {
                 double roundedNum = (double)(Math.round(eval(evaluate) * 1000)) / 1000;
                 answer = "" + roundedNum;
-                if (answer.contains("Infinity")) {
+                if (answer.contains("Infinity") || roundedNum > 100000000) {
                     answer = "CANNOT COMPUTE";
                 }
             } catch (Exception e) {
